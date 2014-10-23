@@ -1,25 +1,29 @@
 CART: Clock with Adaptive Replacement and Temporal Locality
 ===========================================================
 
-Rules
------
-
+Background
+----------
 * T1 and T2 - maintain the current pages (keys) in the cache.
 * B1 and B2 - maintain history about recently evicted pages
 * T1 and T2 each maintain a reference bit (x.q)
 * T1 (x.q = 0) ∪ B1 is the `short-term utility` or recency part of the cache.
 * T1 (x.q = 1) ∪ T2 ∪ B2 is the `long-term utility` or frequency part of the cache.
 
-Let "c" equal the cache size in number of entries.
-Let "p" equal the target size for the page (key) list T1.
-Let "x" equal a page (key) in the cache.
-Let "x.q" equal a page (key) reference bit
-Let "x.type = L" denote long term utility.
-Let "x.type = S" denote short term utility.
+Variables
+---------
 
-Let "x.q = 0" denote a volatile cache item (safe to remove)
-Let "x.q = 1" denote a stable cache item (not safe to remove)
+* Let "c" equal the cache size in number of entries.
+* Let "p" equal the target size for the page (key) list T1.
+* Let "x" equal a page (key) in the cache.
+* Let "x.q" equal a page (key) reference bit
+* Let "x.type = L" denote long term utility.
+* Let "x.type = S" denote short term utility.
 
+* Let "x.q = 0" denote a volatile cache item (safe to remove)
+* Let "x.q = 1" denote a stable cache item (not safe to remove)
+
+Rules
+-----
 1.  If x ∈ T2 ∪ B2, then x.type = L
 
 2.  If x ∈ B1, then x.type = S
