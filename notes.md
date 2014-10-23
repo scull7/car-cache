@@ -67,6 +67,7 @@ Temporal Locality
 Miscellany
 ----------
 * Thinking we should use `async.parallel` to search T1 ∪ B1 ∪ B2 ∪ T2
-
 * Should we treat T1, B1, B2, T2 as separate objects?
+* Make sure that data access is asynchronous so that we can use different backends (Redis, Memcached, etc)
+
 
